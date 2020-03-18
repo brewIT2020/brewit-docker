@@ -4,7 +4,7 @@
 <br />Postgres ✔
 <br />Pgadmin ✔
 <br />Tomcat ✖
-<br />Jenkins ✖
+<br />Jenkins ✔
 <br /><br />
 <h3>Zmienne środowiskowe:</h3>
 <br />POSTGRES_USER
