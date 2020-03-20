@@ -2,6 +2,7 @@
 
 <h3>Zawiera:</h3>
 Postgres ✔
+<br />Nginx ✔
 <br />Pgadmin ✔
 <br />Tomcat ✖
 <br />Jenkins ✔ (WIP: Przydałby się setup z niezbędnymi pluginami)
