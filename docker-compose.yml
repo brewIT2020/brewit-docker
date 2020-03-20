@@ -5,45 +5,38 @@ services:
     container_name: brewit_postgres
     image: postgres
     environment:
-      POSTGRES_USER: ${POSTGRES_USER:-postgres}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       PGDATA: /data/postgres
-    volumes:
-       - postgres:/data/postgres
+    # volumes:
+    #    - ./postgres/postgresql.conf:/data/postgres/
     ports:
       - "5432:5432"
     networks:
       - brewit_network
     restart: unless-stopped
-  
   pgadmin:
     container_name: brewit_pgadmin
     image: dpage/pgadmin4
     environment:
-      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin@pgadmin.org}
-      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
-    volumes:
-       - pgadmin:/root/.pgadmin
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
+    # volumes:
+    #    - ./pgadmin/:/root/.pgadmin
     ports:
-      - "${PGADMIN_PORT:-5050}:80"
+      - "${PGADMIN_PORT}:80"
     networks:
       - brewit_network
     restart: unless-stopped
-
   jenkins:
     container_name: brewit_jenkins
     image: jenkins/jenkins
     ports:
-      - "8000:8080"
+      - "${JENKINS_PORT}:8080"
       - "50000:50000"
     networks:
       - brewit_network
     restart: unless-stopped
-
 networks:
   brewit_network:
     driver: bridge
-
-volumes:
-    postgres:
-    pgadmin:
