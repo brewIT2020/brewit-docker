@@ -1,5 +1,4 @@
 version: '3.5'
-
 services:
   nginx: 
     image: nginx:latest
@@ -47,6 +46,18 @@ services:
     networks:
       - brewit_network
     restart: unless-stopped
+  tomcat:
+    image: tomcat
+    container_name: brewit_tomcat
+    ports: 
+      - "${TOMCAT_PORT}:8080"
+    networks:
+      - brewit_network
+    volumes:
+      - ./tomcat/hello-world.war:/usr/local/tomcat/webapps/ROOT.war
+      # - ./tomcat/DockerExample:/usr/local/tomcat/webapps/ROOT
+
+
 networks:
   brewit_network:
     driver: bridge
