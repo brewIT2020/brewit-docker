@@ -4,7 +4,7 @@
 Postgres ✔
 <br />Nginx ✔
 <br />Pgadmin ✔
-<br />Tomcat ✖
+<br />Tomcat ✔
 <br />Jenkins ✔ (WIP: Przydałby się setup z niezbędnymi pluginami)
 <br /><br />
 <h3>Zmienne środowiskowe:</h3>
@@ -22,6 +22,7 @@ docker-compose up -d <-detached mode
 Baza danych postgresa dziala na porcie 5432
 <br />pgadmin działa na porcie 5050
 <br />jenkins działa na porcie 8000
+<br />tomcat działa na porcie 8080
 <br />
 <br />Postgres dane do logowania:
 <br />postgres:postgres
