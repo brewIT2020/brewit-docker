@@ -37,15 +37,6 @@ services:
     networks:
       - brewit_network
     restart: unless-stopped
-  jenkins:
-    container_name: brewit_jenkins
-    image: jenkins/jenkins
-    ports:
-      - "${JENKINS_PORT}:8080"
-      - "50000:50000"
-    networks:
-      - brewit_network
-    restart: unless-stopped
   tomcat:
     image: tomcat
     container_name: brewit_tomcat
