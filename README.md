@@ -29,7 +29,7 @@ Baza danych postgresa dziala na porcie 5432
 <br />pgadmin@pgadmin.org:admin
 <br />
 <br />
-<h4>Docker-composa z Jenkinsem:<h4>
+<h4>Docker-composa z Jenkinsem:</h4>
 <br />WIP: Przydałby się setup z niezbędnymi pluginami
 <br />Działa na porcie 8080
 <br />logowania:
